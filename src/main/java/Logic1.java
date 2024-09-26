@@ -88,11 +88,11 @@ public class Logic1
 		if (n%3 == 0 && n%5 == 0) {
 			oldman = false; 
 		}
-		else if (n%3 = 0) {
+		else if (n%3 == 0) {
 			oldman = true;
 		}
 		else {
-			if (n%5 = 0) {
+			if (n%5 == 0) {
 				oldman = true;
 			}
 			else {
@@ -112,10 +112,10 @@ public class Logic1
 	specialEleven(24) --> false */
 	public boolean specialEleven(int n) {
 		boolean special;
-		if (n%11 = 0) {
+		if (n%11 == 0) {
 			special = true;
 		}
-		else if (n%11 = 1) {
+		else if (n%11 == 1) {
 			special = true;
 		}
 		else {
@@ -132,7 +132,7 @@ public class Logic1
 	more20(42) --> true */
 	public boolean more20(int n) {
 	  	boolean mor20;
-		if (n%20 = 1 || n%20 = 2) {
+		if (n%20 == 1 || n%20 == 2) {
 			mor20 = true;
 		}
 		else {
