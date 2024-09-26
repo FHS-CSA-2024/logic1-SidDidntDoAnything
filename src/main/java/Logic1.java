@@ -84,7 +84,22 @@ public class Logic1
 	old35(10) --> true
 	old35(15) --> false */
 	public boolean old35(int n) {
-	
+		boolean oldman;
+		if (n%3 == 0 && n%5 == 0) {
+			oldman = false; 
+		}
+		else if (n%3 = 0) {
+			oldman = true;
+		}
+		else {
+			if (n%5 = 0) {
+				oldman = true;
+			}
+			else {
+				oldman = false;
+			}
+		}
+		return oldman;
 	}
 
 
@@ -96,7 +111,17 @@ public class Logic1
 	specialEleven(23) --> true
 	specialEleven(24) --> false */
 	public boolean specialEleven(int n) {
-	  
+		boolean special;
+		if (n%11 = 0) {
+			special = true;
+		}
+		else if (n%11 = 1) {
+			special = true;
+		}
+		else {
+			special = false;
+		}
+		return special;
 	}
 
 
@@ -106,7 +131,14 @@ public class Logic1
 	more20(21) --> true
 	more20(42) --> true */
 	public boolean more20(int n) {
-	  
+	  	boolean mor20;
+		if (n%20 = 1 || n%20 = 2) {
+			mor20 = true;
+		}
+		else {
+			mor20 = false;
+		}
+		return mor20;
 	}
 
 
@@ -118,7 +150,7 @@ public class Logic1
 	less20(59) --> true
 	less20(20) --> false */
 	public boolean less20(int n) {
-	  
+	return (n % 20 == 18 || n % 20 == 19);  
 	}
 
 	/*Given a non-negative number "num", return true if num is within 2 of a multiple of 10. 
@@ -129,7 +161,8 @@ public class Logic1
 	nearTen(17) --> false
 	nearTen(19) --> true */
 	public boolean nearTen(int num) {
-	  
+	  int remainder = num % 10;
+    	return (remainder <= 2 || remainder >= 8);
 	}
 
 
@@ -142,7 +175,11 @@ public class Logic1
 	sortaSum(9, 4) --> 20
 	sortaSum(10, 11) --> 21*/
 	public int sortaSum(int a, int b) {
-	  
+		int sum = a + b;
+		if (sum >= 10 && sum <=19) {
+			sum = 20;
+		}
+	  return sum
 	}
 
 
@@ -155,7 +192,17 @@ public class Logic1
 	in1To10(11, false) --> false
 	in1To10(11, true) --> true */
 	public boolean in1To10(int n, boolean outsideMode) {
-	  
+		boolean into;
+		if (n>=1 && n<=10) {
+			into = true;
+		}
+		else if (outsideMode == true && (n<=1 || n>=10)) {
+			into = true;
+		}
+		else {
+			into = false;
+		}
+	  return into;
 	}
 
 
@@ -167,7 +214,14 @@ public class Logic1
 	teenSum(10, 13) --> 19
 	teenSum(13, 2) --> 19 */
 	public int teenSum(int a, int b) {
-	  
+	 	if ((a>=13 && a<=19) || (b>= 13 && b<=19)) {
+			sum = 19;
+		}
+		else {
+			sum = a + b;
+		}
+		return sum;
+		  
 	}
 
 
@@ -180,7 +234,7 @@ public class Logic1
 	love6(4, 5) --> false
 	love6(1, 5) --> true */
 	public boolean love6(int a, int b) {
-	  
+	      return (a == 6 || b == 6 || (a + b) == 6 || Math.abs(a - b) == 6);
 	}
 
 
@@ -193,7 +247,7 @@ public class Logic1
 	lastDigit(23, 19, 12) --> false
 	lastDigit(23, 19, 3) --> true */
 	public boolean lastDigit(int a, int b, int c) {
-	  
+	  return (a % 10 == b % 10 || b%10 == c%10 || a%10 == c%10);
 	}
 
 
@@ -206,7 +260,22 @@ public class Logic1
 	answerCell(false, false, true) --> false
 	answerCell(true, false, false) --> false */
 	public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
-	  
+	  boolean answer;
+		if (isAsleep == true) {
+			answer = false;
+		}
+		else if (isMorning == true && isMom == true) {
+			answer = true;
+		}
+		else {
+			if (isMorning == true) {
+				answer = false;
+			}
+			else {
+				answer = true;
+			}
+		}
+		return answer;
 	}
 
 	/*Given a day of the week encoded as 0=Sun, 1=Mon, 2=Tue, ...6=Sat, 
@@ -220,7 +289,7 @@ public class Logic1
 	alarmClock(5, false) --> "7:00"
 	alarmClock(0, false) --> "10:00" */
 	public String alarmClock(int day, boolean vacation) {
-	  
+	  if 
 	}
 
 
