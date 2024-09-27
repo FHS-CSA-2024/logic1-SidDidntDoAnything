@@ -289,9 +289,24 @@ public class Logic1
 	alarmClock(5, false) --> "7:00"
 	alarmClock(0, false) --> "10:00" */
 	public String alarmClock(int day, boolean vacation) {
-	  if 
+		String time;
+		if (day>=1 && day<=5) {
+			if (vacation == true) {
+				time = "10:00";
+			}
+			else {
+				time = "7:00";
+			}
+		else {
+			if (vacation == true) {
+				time = "off";
+			}
+			else {
+				time = "10:00";
+			}
+		}
+		return time;
 	}
-
 
 	/*We are having a party with amounts of tea and candy. 
 	Return the int outcome of the party encoded as 0=bad, 1=good, or 2=great. 
@@ -304,6 +319,17 @@ public class Logic1
 	teaParty(3, 8) --> 0
 	teaParty(20, 6) --> 2 */
 	public int teaParty(int tea, int candy) {
+		int outcome;
+		if (tea >= 5 && candy >=5) {
+			outcome = 1;
+		}
+		else if (tea >= 2*candy || candy >= 2*tea) {
+			outcome = 2;
+		}
+		else {
+			outcome = 0;
+		}
+		return outcome;
 	  
 	}
 
@@ -319,8 +345,20 @@ public class Logic1
 	redTicket(2, 2, 1) --> 0
 	redTicket(0, 0, 0) --> 5 */
 	public int redTicket(int a, int b, int c) {
-	  
+	if (a == 2 && b == 2 && c == 2) {
+		return 10;
+	} 
+	else if (a == b && b == c) {
+		return 5;
+	} 
+	else if (a != b && a != c) {
+		return 1;
+	} 
+	else {
+		return 0;
 	}
+	}
+	
 
 
 	/*You have a green lottery ticket, with ints a, b, and c on it. 
@@ -333,9 +371,16 @@ public class Logic1
 	greenTicket(2, 2, 2) --> 20
 	greenTicket(1, 1, 2) --> 10 */
 	public int greenTicket(int a, int b, int c) {
-	  
+    	if (a == b && b == c) {
+        	return 20;
+    	} 
+	else if (a == b || b == c || a == c) {
+        	return 10;
+    	} 	
+	else {
+        	return 0;
+    	}
 	}
-
 
 	/*
 	The squirrels in Palo Alto spend most of the day playing. 
@@ -349,7 +394,13 @@ public class Logic1
 	squirrelPlay(95, false) --> false
 	squirrelPlay(95, true) --> true	*/
 	public boolean squirrelPlay(int temp, boolean isSummer) {
-  
+  		int upperLimit;
+	if (isSummer) {
+    		upperLimit = 100;
+	} 	
+	else {
+    		upperLimit = 90;
+	}
 	}
 
 
@@ -366,9 +417,28 @@ public class Logic1
 	caughtSpeeding(65, false) --> 1
 	caughtSpeeding(65, true) --> 0	*/
 	public int caughtSpeeding(int speed, boolean isBirthday) {
-	  
-	}
+   		int noTicketLimit;
+    		int smallTicketLimit;
 
+    		if (isBirthday) {
+        		noTicketLimit = 65;
+        		smallTicketLimit = 85;
+    		} 
+		else {
+        		noTicketLimit = 60;
+        		smallTicketLimit = 80;
+    		}
+
+    		if (speed <= noTicketLimit) {
+       			return 0;
+    		} 
+		else if (speed <= smallTicketLimit) {
+        		return 1;
+    		} 
+		else {
+        		return 2;
+    		}
+	}
 
 	/*
 	You and your date are trying to get a table at a restaurant. 
@@ -383,8 +453,15 @@ public class Logic1
 	dateFashion(5, 2) --> 0
 	dateFashion(5, 5) --> 1	*/
 	public int dateFashion(int you, int date) {
-	  
+	if (you <= 2 || date <= 2) {
+	        return 0;
+	    } else if (you >= 8 || date >= 8) {
+	        return 2;
+	    } else {
+	        return 1;
+	    }
 	}
+
 	
 	
 	/*Given an int n, return the string form of the number followed by "!". So the int 6 yields "6!". 
@@ -398,8 +475,22 @@ public class Logic1
 	fizzString2(3) --> "Fizz!"
 	fizzString2(15) --> "FizzBuzz!"*/
 	public String fizzString2(int n) {
-  
-	}
+  		public String fizzString2(int n) {
+		if (n % 3 == 0 && n % 5 == 0) {
+			return "FizzBuzz!";
+		    } 
+		else if (n % 3 == 0) {
+		        return "Fizz!";
+		    } 
+		else if (n % 5 == 0) {
+		        return "Buzz!";
+		    } 
+		else {
+		        return n + "!";
+		    }
+		}
+
+	
 
 	/*When squirrels get together for a party, they like to have sodas. 
 	A squirrel party is successful when the number of sodas is between 40 and 60, inclusive. 
@@ -411,7 +502,12 @@ public class Logic1
 	sodaParty(50, false) --> true
 	sodaParty(70, true) --> true */
 	public boolean sodaParty(int sodas, boolean isWeekend) {
-  
+	    if (isWeekend) {
+	        return sodas >= 40;
+	    } 
+	    else {
+	        return sodas >= 40 && sodas <= 60;
+	    }
 	}
 
 }
