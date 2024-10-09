@@ -297,6 +297,7 @@ public class Logic1
 			else {
 				time = "7:00";
 			}
+		}
 		else {
 			if (vacation == true) {
 				time = "off";
