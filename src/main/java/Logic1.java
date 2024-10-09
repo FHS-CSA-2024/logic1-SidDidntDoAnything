@@ -179,7 +179,7 @@ public class Logic1
 		if (sum >= 10 && sum <=19) {
 			sum = 20;
 		}
-	  return sum
+	  return sum;
 	}
 
 
